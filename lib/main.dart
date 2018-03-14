@@ -19,24 +19,57 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text(title),
         ),
-        body: new GridView.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 8.0, // ColumnSpace
-            crossAxisSpacing: 8.0, // RowSpace
-            childAspectRatio: 1.0,
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              new Container(
-                color: Colors.red,
-              ),
-              new Container(
-                color: Colors.blue,
-              ),
-              new Container(
-                color: Colors.yellow,
-              ),
-            ],
-        ),
+        body: new ListView(
+          children: <Widget>[
+            new ListTile(
+              leading: new Icon(Icons.map),
+              title: new Text("Maps"),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.photo_album),
+              title: new Text("Album"),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.phone),
+              title: new Text("Phone"),
+            )
+          ],
+        )
+
+//        new Column(
+//          children: <Widget>[
+//            new Expanded(
+//              child: new GridView.count(
+//                crossAxisCount: 2,
+//                mainAxisSpacing: 8.0, // ColumnSpace
+//                crossAxisSpacing: 8.0, // RowSpace
+//                childAspectRatio: 1.0,
+//                scrollDirection: Axis.vertical,
+//                children: <Widget>[
+//                  new Container(
+//                    color: Colors.red,
+//                  ),
+//                  new Container(
+//                    color: Colors.blue,
+//                  ),
+//                  new Container(
+//                    color: Colors.yellow,
+//                  ),
+//                  new Container(
+//                    color: Colors.grey,
+//                  ),
+//                  new Container(
+//                    color: Colors.green,
+//                  ),
+//                  new Container(
+//                    color: Colors.pink,
+//                  ),
+//                ],
+//              ),
+//            ),
+//          ],
+//        )
+
         /*
         body: new Center(
           child: new CachedNetworkImage(
