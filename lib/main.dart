@@ -4,6 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
+  final List<String> items = new List<String>.generate(100, (i) => "Item ${i}");
+
   @override
   Widget build(BuildContext context) {
     var title = "Web Images";
@@ -19,7 +21,16 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text(title),
         ),
-        body: new ListView(
+        body: new ListView.builder(
+            itemCount: items.length,
+            itemBuilder: (context, index){
+              return new ListTile(
+                title: new Text('${items[index]}'),
+              );
+            }
+        ),
+          /*
+        new ListView(
           children: <Widget>[
             new ListTile(
               leading: new Icon(Icons.map),
@@ -75,7 +86,7 @@ class MyApp extends StatelessWidget {
             )
           ],
         )
-
+*/
 
         /*
         body: new Center(
