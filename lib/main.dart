@@ -32,43 +32,50 @@ class MyApp extends StatelessWidget {
             new ListTile(
               leading: new Icon(Icons.phone),
               title: new Text("Phone"),
+            ),
+            new Row(
+              children: <Widget>[
+                new Expanded(
+                  child: new Container(
+                    height: 400.0,
+                    margin: const EdgeInsets.all(5.0),
+                    color: Colors.indigo,
+                  )
+                )
+//                new Expanded(
+//                  child: new GridView.count(
+//                    crossAxisCount: 2,
+//                    mainAxisSpacing: 8.0, // ColumnSpace
+//                    crossAxisSpacing: 8.0, // RowSpace
+//                    childAspectRatio: 1.0,
+//                    scrollDirection: Axis.vertical,
+//                    children: <Widget>[
+//                      new Container(
+//                        color: Colors.red,
+//                      ),
+//                      new Container(
+//                        color: Colors.blue,
+//                      ),
+//                      new Container(
+//                        color: Colors.yellow,
+//                      ),
+//                      new Container(
+//                        color: Colors.grey,
+//                      ),
+//                      new Container(
+//                        color: Colors.green,
+//                      ),
+//                      new Container(
+//                        color: Colors.pink,
+//                      ),
+//                    ],
+//                  ),
+//                ),
+              ],
             )
           ],
         )
 
-//        new Column(
-//          children: <Widget>[
-//            new Expanded(
-//              child: new GridView.count(
-//                crossAxisCount: 2,
-//                mainAxisSpacing: 8.0, // ColumnSpace
-//                crossAxisSpacing: 8.0, // RowSpace
-//                childAspectRatio: 1.0,
-//                scrollDirection: Axis.vertical,
-//                children: <Widget>[
-//                  new Container(
-//                    color: Colors.red,
-//                  ),
-//                  new Container(
-//                    color: Colors.blue,
-//                  ),
-//                  new Container(
-//                    color: Colors.yellow,
-//                  ),
-//                  new Container(
-//                    color: Colors.grey,
-//                  ),
-//                  new Container(
-//                    color: Colors.green,
-//                  ),
-//                  new Container(
-//                    color: Colors.pink,
-//                  ),
-//                ],
-//              ),
-//            ),
-//          ],
-//        )
 
         /*
         body: new Center(
