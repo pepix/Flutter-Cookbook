@@ -44,6 +44,9 @@ class MyApp extends StatelessWidget {
                 child: new Text("Launch Second Screen"),
               ),
             ),
+            new Center(
+              child: new SelectionButton()
+            ),
             new ListTile(
               leading: new Icon(Icons.map),
               title: new Text("Maps"),
@@ -96,6 +99,61 @@ class SecondScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class SelectionScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sellection Screen"),
+      ),
+      body: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Padding(
+            padding: new EdgeInsets.all(12.0),
+            child: new RaisedButton(
+              onPressed: (){
+                Navigator.pop(context, 'YES!');
+              },
+              child: new Text("YES"),
+            ),
+          ),
+          new Padding(
+            padding: new EdgeInsets.all(12.0),
+            child: new RaisedButton(
+              onPressed: (){
+                Navigator.pop(context, 'NO!');
+              },
+              child: new Text("NO"),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class SelectionButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new RaisedButton(
+      onPressed: () {
+        _navigateAndDisplaySelection(context);
+      },
+      child: new Text("Pick an option, any option!"),
+    );
+  }
+
+  _navigateAndDisplaySelection(BuildContext context) async {
+    final result = await Navigator.push(
+      context,
+      new MaterialPageRoute(builder: (context) => new SelectionScreen()),
+    );
+
+    Scaffold.of(context).showSnackBar(new SnackBar(content: new Text("${result}")));
   }
 }
 
