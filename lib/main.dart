@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
 
         new ListView(
           children: <Widget>[
+            new MyButton(),
             new Center(
               child: new MyButton(),
             ),
@@ -124,11 +125,21 @@ class MyButton extends StatelessWidget {
 
         Scaffold.of(context).showSnackBar(snackBar);
       },
+      onDoubleTap: (){
+        final snackBar = new SnackBar(
+            content: new Text("Double Tap!"),
+            duration: new Duration(
+              milliseconds: 500,
+            ),
+        );
+        Scaffold.of(context).showSnackBar(snackBar);
+      },
       child: new Container(
+        margin: new EdgeInsets.all(12.0),
         padding: new EdgeInsets.all(12.0),
         decoration: new BoxDecoration(
           color: Theme.of(context).buttonColor,
-          borderRadius: new BorderRadius.circular(8.0),
+          borderRadius: new BorderRadius.circular(16.0),
         ),
         child: new Text("My Button"),
       ),
