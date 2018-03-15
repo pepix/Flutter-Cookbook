@@ -36,7 +36,9 @@ class MyApp extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    new MaterialPageRoute(builder: (context) => new SecondScreen()),
+                    new MaterialPageRoute(
+                        builder: (context) => new SecondScreen(comment: "this is comment",)
+                    ),
                   );
                 },
                 child: new Text("Launch Second Screen"),
@@ -72,6 +74,12 @@ class MyApp extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  // Declare a field that hold a comment
+  final String comment;
+
+  //DetailScreen({Key key, @required this.todo}) : super(key: key);
+  SecondScreen({Key key, @required this.comment}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -84,7 +92,7 @@ class SecondScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: new Text("Go back!"),
+          child: new Text(comment),
         ),
       ),
     );
