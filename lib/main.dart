@@ -1,10 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  final List<String> items = new List<String>.generate(100, (i) => "Item ${i}");
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +24,13 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text(title),
         ),
-        body: new ListView.builder(
-            itemCount: items.length,
-            itemBuilder: (context, index){
-              return new ListTile(
-                title: new Text('${items[index]}'),
-              );
-            }
-        ),
-          /*
+        body:
+
         new ListView(
           children: <Widget>[
+            new Center(
+              child: new MyButton(),
+            ),
             new ListTile(
               leading: new Icon(Icons.map),
               title: new Text("Maps"),
@@ -86,7 +85,7 @@ class MyApp extends StatelessWidget {
             )
           ],
         )
-*/
+
 
         /*
         body: new Center(
@@ -111,6 +110,27 @@ class MyApp extends StatelessWidget {
           ],
         ),
         */
+      ),
+    );
+  }
+}
+
+class MyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new GestureDetector(
+      onTap: () {
+        final snackBar = new SnackBar(content: new Text("Tap!"));
+
+        Scaffold.of(context).showSnackBar(snackBar);
+      },
+      child: new Container(
+        padding: new EdgeInsets.all(12.0),
+        decoration: new BoxDecoration(
+          color: Theme.of(context).buttonColor,
+          borderRadius: new BorderRadius.circular(8.0),
+        ),
+        child: new Text("My Button"),
       ),
     );
   }
