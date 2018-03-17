@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
+import 'package:image/chat.dart';
+
 void main() {
   runApp(new MaterialApp(
     title: "My Application",
@@ -10,14 +12,18 @@ void main() {
       primaryColor: Colors.lightBlue[400],
       accentColor: Colors.cyan,
     ),
-    home: new MyApp(),
+    //home: new MyApp(),
+    home: new ChatScreen(),
   ));
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     var title = "Web Images";
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
 
     return new Scaffold(
         appBar: new AppBar(
@@ -57,7 +63,7 @@ class MyApp extends StatelessWidget {
             ),
             new ListTile(
               leading: new Icon(Icons.phone),
-              title: new Text("Phone"),
+              title: new Text("Width: ${screenWidth.toString()}"),
             ),
             new Row(
               children: <Widget>[
