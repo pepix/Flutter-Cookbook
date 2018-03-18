@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 const String _name = "pepix";
+const textStyle = const TextStyle(
+  fontFamily: 'NotoSansCJK-Black',
+);
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -138,7 +141,10 @@ class ChatMessage extends StatelessWidget {
                 ),
                 new Container(
                   margin: const EdgeInsets.only(top: 5.0),
-                  child: new Text(text),
+                  child: new Text(
+                    text,
+                    style: textStyle,
+                  ),
                 ),
               ],
             )
