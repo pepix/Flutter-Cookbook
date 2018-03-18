@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:image/chat.dart';
+import 'package:image/grid.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -13,7 +14,8 @@ void main() {
       accentColor: Colors.cyan,
     ),
     //home: new MyApp(),
-    home: new ChatScreen(),
+    //home: new ChatScreen(),
+    home: new GridScreen(),
   ));
 }
 
